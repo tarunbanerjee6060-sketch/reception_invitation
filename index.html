@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reception Invitation | Tarun & Ashmitha</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Allura&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Cinzel', serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#f5e6c8;
+overflow-x:hidden;
+}
+
+/* subtle moving glow */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle,rgba(255,255,255,0.05) 1px,transparent 1px);
+background-size:40px 40px;
+animation:move 60s linear infinite;
+z-index:-1;
+}
+@keyframes move{
+from{transform:translate(0,0);}
+to{transform:translate(-400px,-400px);}
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px 20px;
+animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(60px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+h1{
+font-size:38px;
+letter-spacing:6px;
+color:#d4af37;
+}
+
+.save{
+font-size:14px;
+opacity:0.8;
+margin-bottom:20px;
+}
+
+/* GOLDEN COUPLE NAMES */
+.names{
+font-family:'Allura', cursive;
+font-size:55px;
+background:linear-gradient(45deg,#f5e6c8,#d4af37,#fff3c4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 15px rgba(212,175,55,0.7);
+margin:20px 0;
+animation:glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px rgba(212,175,55,0.6);}
+to{text-shadow:0 0 25px rgba(212,175,55,1);}
+}
+
+.names a{
+text-decoration:none;
+color:inherit;
+transition:0.4s;
+}
+
+.names a:hover{
+transform:scale(1.1);
+}
+
+.message{
+font-size:16px;
+max-width:320px;
+line-height:1.6;
+margin-top:10px;
+}
+
+.date{
+margin-top:25px;
+font-size:18px;
+color:#d4af37;
+}
+
+.countdown{
+display:flex;
+gap:10px;
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.countdown div{
+background:rgba(255,255,255,0.1);
+padding:12px;
+border-radius:12px;
+backdrop-filter:blur(10px);
+font-size:14px;
+transition:0.3s;
+}
+
+.countdown div:hover{
+transform:scale(1.1);
+}
+
+.details{
+margin-top:30px;
+font-size:14px;
+line-height:1.6;
+}
+
+.map-box{
+margin-top:20px;
+width:100%;
+max-width:350px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(212,175,55,0.5);
+}
+
+.button{
+margin-top:25px;
+padding:12px 30px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#d4af37,#f5e6c8);
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.button:hover{
+transform:scale(1.08);
+}
+
+.rsvp{
+margin-top:30px;
+width:100%;
+max-width:350px;
+}
+
+input, select, textarea{
+width:100%;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+border:none;
+font-family:'Cinzel', serif;
+}
+
+textarea{
+height:80px;
+}
+
+.submit{
+margin-top:15px;
+background:#25D366;
+color:white;
+font-weight:bold;
+}
+
+.footer{
+margin-top:30px;
+font-size:14px;
+opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+
+<h1>INVITATION</h1>
+<div class="save">Save the Date</div>
+
+<div class="names">
+<a href="tarun.html">Tarun</a><br>&<br>
+<a href="ashmitha.html">Ashmitha</a>
+</div>
+
+<div class="message">
+Kindly grace us with your presence at our Reception Celebration.
+</div>
+
+<div class="date">Friday 27th February 2026</div>
+
+<div class="countdown">
+<div><span id="days"></span><br>Days</div>
+<div><span id="hours"></span><br>Hours</div>
+<div><span id="minutes"></span><br>Min</div>
+<div><span id="seconds"></span><br>Sec</div>
+</div>
+
+<div class="details">
+<b>Reception</b><br>
+27 February 2026 · 7:00 PM onwards<br>
+Hotel SVM Grand, Dairy Farm Road, Hyderabad, Telangana 500015
+</div>
+
+<div class="map-box">
+<iframe 
+src="https://www.google.com/maps?q=Hotel+SVM+Grand+Dairy+Farm+Road+Hyderabad+Telangana+500015&output=embed"
+width="100%" height="200" style="border:0;" allowfullscreen>
+</iframe>
+</div>
+
+<button class="button" onclick="location.href='note.html'">A Note of Joy</button>
+
+<div class="rsvp">
+<h3>RSVP</h3>
+<input type="text" id="name" placeholder="Your Name">
+<select id="status">
+<option>Attending</option>
+<option>Not Attending</option>
+</select>
+<textarea id="wish" placeholder="Any Best Wishes to us"></textarea>
+<button class="button submit" onclick="sendWhatsApp()">Submit via WhatsApp</button>
+</div>
+
+<div class="footer">
+With Love Tarun & Ashmitha | 2026
+</div>
+
+</section>
+
+<script>
+var weddingDate = new Date("Feb 27, 2026 19:00:00").getTime();
+
+setInterval(function(){
+var now = new Date().getTime();
+var distance = weddingDate - now;
+
+document.getElementById("days").innerHTML = Math.floor(distance/(1000*60*60*24));
+document.getElementById("hours").innerHTML = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerHTML = Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerHTML = Math.floor((distance%(1000*60))/1000);
+},1000);
+
+function sendWhatsApp(){
+var name = document.getElementById("name").value;
+var status = document.getElementById("status").value;
+var wish = document.getElementById("wish").value;
+
+var message = "Reception RSVP%0AName: "+name+"%0AStatus: "+status+"%0AWishes: "+wish;
+window.open("https://wa.me/917799207000?text="+message,"_blank");
+}
+</script>
+
+</body>
+</html>
